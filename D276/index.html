@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Joe Nieto | Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <div class="container">
+      <h1>Joe Nieto</h1>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="resume.html">Resume</a>
+        <a href="coverletter.html">Cover Letter</a>
+        <a href="careergoals.html">Career Goals</a>
+      </nav>
+      <button id="theme-toggle" aria-label="Toggle Theme">🌓</button>
+    </div>
+  </header>
+
+  <section id="hero">
+    <div class="container">
+      <h2>Hello, I'm a Web Developer</h2>
+      <p>I build clean, responsive websites and user interfaces.</p>
+    </div>
+  </section>
+
+  <section id="about" class="container">
+    <h2>About Me</h2>
+    <img src="images/profile.jpg" alt="Your Photo" class="profile-img" />
+    <p>
+      I'm a passionate front-end developer with experience in HTML, CSS, JavaScript, and React.
+      I focus on building accessible, user-friendly, and high-performance websites.
+    </p>
+  </section>
+
+  <section id="projects" class="container">
+    <h2>Featured Projects</h2>
+
+    <div class="project">
+      <h3>Portfolio Website</h3>
+      <p>A fully responsive personal site built with HTML, CSS, and JavaScript.</p>
+      <a href="#">View Live</a>
+    </div>
+
+    <div class="project">
+      <h3>To-Do App</h3>
+      <p>Task management app using JavaScript and local storage.</p>
+      <a href="#">View on GitHub</a>
+    </div>
+
+    
+  </section>
+
+  <section id="contact" class="container">
+    <h2>Contact Me</h2>
+    <p>Email: <a href="mailto:your@email.com">Nieto91@gmail.com</a></p>
+    <p>GitHub: <a href="https://github.com/yourusername" target="_blank">github.com/joe-nieto-12298368</a></p>
+    <p>LinkedIn: <a href="https://linkedin.com/in/yourname" target="_blank">linkedin.com/in/Nieto91</a></p>
+  </section>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 Joe Nieto. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    const toggle = document.getElementById('theme-toggle');
+    const body = document.body;
+
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme) {
+      body.className = savedTheme;
+    } else {
+      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      body.className = prefersDark ? 'dark' : 'light';
+    }
+
+    toggle.addEventListener('click', () => {
+      body.className = body.className === 'dark' ? 'light' : 'dark';
+      localStorage.setItem('theme', body.className);
+    });
+  </script>
+</body>
+</html>
